@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -23,7 +22,22 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="/css/layout.css" rel="stylesheet">
+  
+  <link href="/css/login-form.css", rel="stylesheet">
 
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              laravel: '#ef3b2d',
+            },
+          },
+        },
+      }
+  </script>
 </head>
 
 <body>
@@ -49,15 +63,6 @@
             <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
                 <li><a href="#">Drop Down 2</a></li>
                 <li><a href="#">Drop Down 3</a></li>
                 <li><a href="#">Drop Down 4</a></li>
@@ -71,30 +76,33 @@
   
       </div>
   </header><!-- End Header -->
-
   {{$slot}}
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row d-flex align-items-center">
-        <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            &copy; Copyright <strong><x-header_title /></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-          </div>
+  @if (false)
+    <footer id="footer">
+        <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-lg-left text-center">
+            <div class="copyright">
+                &copy; Copyright <strong><x-header_title /></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+            </div>
+            <div class="col-lg-6">
+            <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                <a href="#intro" class="scrollto">Home</a>
+                <a href="#about" class="scrollto">About</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </nav>
+            </div>
         </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-          </nav>
         </div>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer>
+  @endif
+
+
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -111,7 +119,10 @@
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 
+  </script>
+  <script src="/js/login-form.js"></script>
 </body>
 
 </html>

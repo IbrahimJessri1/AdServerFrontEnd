@@ -8,7 +8,7 @@
       <h2>Creating content takes time, making it profitable shouldn't</h2>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Register</a>
-        <a href="" class="glightbox btn-watch-video"><span>Log In</span></a>
+        <a href="/login" class=""><span>Log In</span></a>
       </div>
     </div>
   </section><!-- End Hero -->
