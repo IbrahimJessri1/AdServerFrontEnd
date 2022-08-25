@@ -22,7 +22,7 @@
       <span class="text-lg text-white-500">{{$username}}</span> 
       <form class="inline ml-[2%]" method="POST" action="/logout">
         @csrf
-        <button type="submit" class='text-white hover:text-black'>
+        <button type="submit" class='hover:text-black'>
           <i class="fa-solid fa-door-closed"></i> Logout
         </button>
       </form>

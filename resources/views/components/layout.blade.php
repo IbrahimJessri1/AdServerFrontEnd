@@ -95,7 +95,7 @@
   <footer id="footer">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-lg-6 text-lg-left text-center position-absolute ml-24">
+            <div class="col-lg-6 text-lg-left text-center position-absolute">
             <div class="copyright">
               &copy; Copyright <strong><x-header_title /></strong>. All Rights Reserved
             </div>
