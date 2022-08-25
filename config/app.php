@@ -54,7 +54,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
     'adserver_url' => "http://127.0.0.1:8000",
-    'logged' => false,
+    'username' => "",
     'asset_url' => env('ASSET_URL', null),
 
     /*

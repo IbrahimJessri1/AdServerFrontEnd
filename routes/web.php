@@ -34,3 +34,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 
 
 Route::post('/user/authenticate', [UserController::class, 'authenticate']);
+
+Route::post('/logout', [UserController::class, 'logout'])->middleware('authcheck');
+
+Route::get('/advertiser/dashboard', [AdvertiserController::class, 'dashboard'])->middleware('authcheck');
+

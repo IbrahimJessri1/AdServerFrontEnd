@@ -22,8 +22,21 @@
   <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="/vendor/feather/feather.css">
+  <link rel="stylesheet" href="/vendor/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/vendor/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/vendor/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="/vendor/ti-icons/css/themify-icons.css">
+
+  {{-- <link rel="stylesheet" type="text/css" href="/js/select.dataTables.min.css"> --}}
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+
+
+
+
   <link href="/css/layout.css" rel="stylesheet">
-  
+  <link href="/css/dashboard.css" rel="stylesheet">
   <link href="/css/login-form.css", rel="stylesheet">
 
   <script src="//unpkg.com/alpinejs" defer></script>
@@ -42,59 +55,58 @@
 </head>
 
 <body>
+  @isset($username)
+  <x-topbar :username="$username"/>
+  @else
   <x-topbar />
-
+  @endisset
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
-
         <div class="logo">
           <h1><a href="/"><x-header_title /></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
-  
+        @if(!isset($simpleheader) || $simpleheader == false)
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li> <a class="getstarted scrollto" href="#about"> Get Started</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-  
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              @if(!isset($username) || $username == "")
+                <li> <a class="getstarted scrollto" href="/login"> Get Started</a></li>
+              @else
+              <li> <a class="getstarted scrollto" href="/advertiser/dashboard"> Dashboard</a></li>
+              @endif
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+          @endif
       </div>
-  </header><!-- End Header -->
+    </header><!-- End Header -->
+   
   {{$slot}}
   <!-- ======= Footer ======= -->
   @if(!isset($footer) || $footer == true)
-    <footer id="footer">
-        <div class="container">
+  <footer id="footer">
+    <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-lg-6 text-lg-left text-center">
+            <div class="col-lg-6 text-lg-left text-center position-absolute ml-24">
             <div class="copyright">
-                &copy; Copyright <strong><x-header_title /></strong>. All Rights Reserved
+              &copy; Copyright <strong><x-header_title /></strong>. All Rights Reserved
             </div>
             <div class="credits">
             </div>
-            </div>
-            <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6 position-absolute ml-96">
             <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                <a href="#intro" class="scrollto">Home</a>
-                <a href="#about" class="scrollto">About</a>
-                <a href="#">Privacy Policy</a>
+              <a href="#intro" class="scrollto">Home</a>
+              <a href="#about" class="scrollto">About</a>
+              <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Use</a>
             </nav>
             </div>
@@ -122,7 +134,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 
   </script>
+  <script src="/vendor/js/vendor.bundle.base.js"></script>
   <script src="/js/login-form.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/template.js"></script>
 </body>
 
 </html>

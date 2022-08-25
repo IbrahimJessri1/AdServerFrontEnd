@@ -1,3 +1,8 @@
+
+
+
+
+
 <section id="topbar" class="d-flex align-items-center">
     {{-- <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
@@ -11,4 +16,15 @@
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div> --}}
+    @if(isset($username) && $username != "")
+      <span class='ml-[75%] text-lg font-bold text-black'>Welcome</span> 
+      &nbsp;&nbsp;&nbsp; 
+      <span class="text-lg text-white-500">{{$username}}</span> 
+      <form class="inline ml-[2%]" method="POST" action="/logout">
+        @csrf
+        <button type="submit" class='text-white hover:text-black'>
+          <i class="fa-solid fa-door-closed"></i> Logout
+        </button>
+      </form>
+    @endif
 </section>
