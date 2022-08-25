@@ -30,4 +30,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'index']);
 
 
-Route::get('/login', [UserController::class, 'create']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+
+
+Route::post('/user/authenticate', [UserController::class, 'authenticate']);

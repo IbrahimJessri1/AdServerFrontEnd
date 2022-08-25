@@ -8,12 +8,12 @@
       <h2>Creating content takes time, making it profitable shouldn't</h2>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Register</a>
-        <a href="/login" class=""><span>Log In</span></a>
+        <a href="/login" class="mt-2 ml-2"><span class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Log In</span></a>
       </div>
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
+  {{-- <main id="main">
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container" data-aos="fade-up">
@@ -826,6 +826,6 @@
       </div>
     </section><!-- End Contact Section -->
 
-  </main><!-- End #main -->
+  </main><!-- End #main --> --}}
 
 </x-layout>

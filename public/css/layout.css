@@ -8,11 +8,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
-  /* min-height: 800px; */
 }
 
 a {
@@ -190,7 +188,7 @@ h6 {
 
 #header .logo {
   font-size: 30px;
-  margin: 0;
+  margin-left: 100px;
   padding: 0;
   line-height: 1;
   font-weight: 600;
@@ -1661,8 +1659,9 @@ section {
   padding: 30px 0;
   color: #222222;
   font-size: 14px;
-  position: absolute;
+  position: fixed;
   width:100%;
+  bottom:0;
 }
 
 #footer .credits {
@@ -1681,7 +1680,7 @@ section {
 }
 
 #footer .footer-links a:hover {
-  color: #106eea;
+  color: #3498db;
 }
 
 @media (max-width: 768px) {

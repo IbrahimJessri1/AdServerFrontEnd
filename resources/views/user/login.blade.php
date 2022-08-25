@@ -1,4 +1,5 @@
-<x-layout>
+
+<x-layout :footer="$footer">
 
 
     <x-login-form />

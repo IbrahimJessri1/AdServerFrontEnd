@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
   
   <link href="/css/login-form.css", rel="stylesheet">
 
-
+  <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -47,7 +48,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-          <h1><a href="index.html"><x-header_title /></a></h1>
+          <h1><a href="/"><x-header_title /></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -78,7 +79,7 @@
   </header><!-- End Header -->
   {{$slot}}
   <!-- ======= Footer ======= -->
-  @if (false)
+  @if(!isset($footer) || $footer == true)
     <footer id="footer">
         <div class="container">
         <div class="row d-flex align-items-center">
@@ -103,10 +104,9 @@
   @endif
 
 
-
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  <x-flash-message />
   <!-- Vendor JS Files -->
   <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="/vendor/aos/aos.js"></script>

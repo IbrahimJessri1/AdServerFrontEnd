@@ -80,7 +80,7 @@
 .form-group input {
     outline: none;
     display: block;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.029);
     width: 100%;
     border: 0;
     border-radius: 4px;
