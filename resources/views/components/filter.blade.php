@@ -6,7 +6,7 @@
             <h4>Type</h4>
             <div class="cd-filter-content">
                 <div class="cd-select cd-filters">
-                    <select class="filter" name="type" id="type" onChange="selChange">
+                    <select class="filter" name="type" id="type">
                         <option selected value="all"> All </option>
                         <option value="image">Image</option>
                         <option value="gif">Gif</option>
@@ -20,7 +20,7 @@
             <h4>Shape</h4>
             <div class="cd-filter-content">
                 <div class="cd-select cd-filters">
-                    <select class="filter" name="shape" id="shape" onChange="selChange">
+                    <select class="filter" name="shape" id="shape">
                         <option selected value="all"> All </option>
                         <option value="rectangular">Rectangular</option>
                         <option value="vertical">Vertical</option>
@@ -35,7 +35,7 @@
             
             <div class="cd-filter-content">
                 <div class="cd-select cd-filters">
-                    <select class="filter" name="interactive" id="interactive" onChange="selChange">
+                    <select class="filter" name="interactive" id="interactive">
                         <option selected value="2">Both</option>
                         <option value="1">Interactive</option>
                         <option value="0">Non-interactive</option>

@@ -2,7 +2,11 @@
 
 
 
-<script>
+<script defer>
+    document.getElementById('type').onchange = selChange;
+    document.getElementById('shape').onchange = selChange;
+    document.getElementById('interactive').onchange = selChange;
+
     var no_more = false;
     function loadMoreData(skip, limit, interactive, type, shape){
         $.ajax({
@@ -40,17 +44,13 @@
 
 
     function selChange(){
-        var val = $("#type").serialize();
-        alert(val);
-        return;
-        $.ajax({
-            type: "POST",
-            url: "select.php",
-            data: val,
-            success: function(data) { 
-                $('#sel2').html(data);
-            }
-        }); 
+        type = document.getElementById("type").value;
+        shape = document.getElementById("shape").value;
+        interactive = parseInt(document.getElementById("interactive").value);
+        document.getElementById("all-ads").innerHTML = "";
+        skip = 0;
+        no_more = false;
+        loadMoreData(skip, limit, interactive, type, shape);
         return false;
     }
 </script>
