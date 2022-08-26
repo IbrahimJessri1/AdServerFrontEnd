@@ -2,7 +2,10 @@
 
 
 <x-advertiser-layout :username="$username" :simpleheader="$simpleheader">
-   @foreach($data as $ad)
-        <x-ad-card :ad="$ad" />
-   @endforeach
+
+   @include('advertiser.ad-cards')
+
+   <x-filter />
+
+
 </x-advertiser-layout>

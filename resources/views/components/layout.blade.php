@@ -38,6 +38,7 @@
   <link href="/css/layout.css" rel="stylesheet">
   <link href="/css/dashboard.css" rel="stylesheet">
   <link href="/css/login-form.css", rel="stylesheet">
+  <link href="/css/filter.css", rel="stylesheet">
 
   <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -130,14 +131,21 @@
   <script src="/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" integrity="sha512-jNDtFf7qgU0eH/+Z42FG4fw3w7DM/9zbgNPe3wfJlCylVDTT3IgKW5r92Vy9IHa6U50vyMz5gRByIu4YIXFtaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </script>
-  <script src="/vendor/js/vendor.bundle.base.js"></script>
-  <script src="/js/login-form.js"></script>
-  <script src="/js/dashboard.js"></script>
-  <script src="/js/template.js"></script>
+
+
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/jquery.mixitup.min.js"></script>
+<script src="/js/filter.js"></script> 
+
+<script src="/vendor/js/vendor.bundle.base.js"></script>
+<script src="/js/login-form.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/template.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/lazyload.js"></script>
 </body>
 
 </html>

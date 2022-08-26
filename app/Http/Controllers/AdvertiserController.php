@@ -24,15 +24,35 @@ class AdvertiserController extends Controller
         $username = "";
         if (session()->has('username'))
             $username = session()->get('username');
-
         $data = [];
+
+        $skip = 0;
+        $limit = 5;
+        $interactive = 2;
+        $type = "all";
+
+        if($request->ajax()){
+            if(isset($request->skip))
+                $skip = $request->skip;
+            if(isset($request->limit))
+                $limit = $request->limit;
+            if(isset($request->interactive))
+                $interactive = $request->interactive;
+            if(isset($request->type))
+                $type = $request->type;
+        }
+        
         try{
             $jwt = $request->cookie('jwt');
             $url = Config::get('app.adserver_url') . '/advertisement/my_ads';
-            $response = Http::withToken($jwt)->get($url, ["interactive" => 1]);
-            
-            if($response->status() == 200)
+            $response = Http::withToken($jwt)->get($url, ["interactive" => $interactive, "skip" => $skip, "limit" => $limit, "type" => $type]);
+            if($response->status() == 200){
+                if($request->ajax()){
+                    $view = view('advertiser.ad-cards', $response->json())->render();
+                    return response()->json(["html" => $view]);
+                }
                 $data = $response->json();
+            }
             else if($response->status() == 401)
                 return redirect('/login')->with('info-message', 'You need to be logged in!'); 
             else
@@ -42,6 +62,10 @@ class AdvertiserController extends Controller
             dd($e);
             return redirect('/advertiser/dashboard')->with('error-message', 'Something went wrong!');
         }
+
+
+        
+
         return view('advertiser.myads', [
             "username" => $username,
             "simpleheader" => true,
