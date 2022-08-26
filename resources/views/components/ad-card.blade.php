@@ -1,0 +1,28 @@
+
+
+<div class="flex ml-10 items-center flex-row mt-4">
+  <div class="w-10/12 rounded overflow-hidden shadow-lg flex flex-row items-center">
+      <div style="width:150px; height:150px;">
+        <img src="{{$ad['url']}}" alt='ad-img' class='w-full h-full' onerror="this.src='/img/notfound.jpg';">
+      </div>
+      <div class="px-6 py-4 w-3/4">
+        <div class="font-bold text-base mb-2">{{$ad['ad_info']['text']}}</div>
+        <p class="text-gray-700 text-base">
+          Created: {{$ad['create_date']}}
+        </p>
+        @foreach($ad['categories'] as $cat)
+          <span class="inline-block mt-6 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+            {{$cat}}
+          </span>
+        @endforeach
+      </div>
+        {{-- <div class="px-6 py-4 inline-block">
+          @foreach($ad['categories'] as $cat)
+            <span class=" bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+              {{$cat}}
+            </span>
+          @endforeach
+        </div> --}}
+      </div>
+    
+</div>

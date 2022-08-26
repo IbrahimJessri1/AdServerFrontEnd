@@ -8,6 +8,12 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/advertiser/ads">
+        <i class="fas fa-ad menu-icon"></i>
+        <span class="menu-title">My Ads</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="icon-layout menu-icon"></i>
         <span class="menu-title">UI Elements</span>

@@ -39,3 +39,5 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('authcheck
 
 Route::get('/advertiser/dashboard', [AdvertiserController::class, 'dashboard'])->middleware('authcheck');
 
+Route::get('/advertiser/ads', [AdvertiserController::class, 'get_my_ads'])->middleware('authcheck');
+

@@ -29,8 +29,7 @@ class UserController extends Controller
                 $request->session()->put('username', $formFields["username"]);
                 $cookie_exp = time() + 3600 * 5;
                 $jwt = $response->json()["access_token"];
-                setcookie("jwt", $jwt, $cookie_exp);
-                return redirect('/')->with('success-message', 'You are logged in now!');
+                return redirect('/')->with('success-message', 'You are logged in now!')->withCookie('jwt', $jwt, $cookie_exp);
             }
             else{
                 return back()->withErrors(['username' => 'Invalid Credentials'])->onlyInput('username');
