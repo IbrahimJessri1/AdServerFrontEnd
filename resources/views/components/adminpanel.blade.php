@@ -14,6 +14,12 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/advertiser/create">
+        <i class="fas fa-plus menu-icon"></i>
+        <span class="menu-title">Create Ad</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="icon-layout menu-icon"></i>
         <span class="menu-title">UI Elements</span>

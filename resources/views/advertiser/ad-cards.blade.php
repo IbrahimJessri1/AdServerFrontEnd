@@ -3,7 +3,13 @@
 <div class="flex ml-10 items-center flex-row mt-4">
   <div class="w-10/12 rounded overflow-hidden shadow-lg flex flex-row items-center">
       <div class="w-36 h-36 p-1">
-        <img src="{{$ad['url']}}" alt='ad-img' class='lozad w-full h-full' onerror="this.src='/img/notfound.jpg';">
+        @if($ad['ad_info']['type'] == 'video')
+          <video class='w-full h-full' autoplay muted loop>
+            <source src="{{$ad['url']}}" type="video/mp4" />
+          </video>
+        @else
+          <img src="{{$ad['url']}}" alt='ad-img' class='lozad w-full h-full' onerror="this.src='/img/notfound.jpg';">
+        @endif
       </div>
       <div class="px-6 py-4 w-3/4">
         <div class="font-bold text-base mb-2">{{$ad['ad_info']['text']}}</div>

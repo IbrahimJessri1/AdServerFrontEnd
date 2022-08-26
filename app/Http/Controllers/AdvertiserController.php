@@ -78,4 +78,14 @@ class AdvertiserController extends Controller
             "data" => $data
         ]);
     }
+
+    public function create(){
+        $username = "";
+        if (session()->has('username'))
+            $username = session()->get('username');
+        return view('advertiser.create', [
+            "username" => $username,
+            "simpleheader" => true
+        ]);
+    }
 }
