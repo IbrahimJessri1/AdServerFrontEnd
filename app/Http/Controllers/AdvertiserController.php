@@ -30,25 +30,32 @@ class AdvertiserController extends Controller
         $limit = 5;
         $interactive = 2;
         $type = "all";
-
+        $shape = "all";
         if($request->ajax()){
-            if(isset($request->skip))
+            if(isset($request->skip)){
                 $skip = $request->skip;
+            }
             if(isset($request->limit))
                 $limit = $request->limit;
             if(isset($request->interactive))
                 $interactive = $request->interactive;
             if(isset($request->type))
                 $type = $request->type;
+            if(isset($request->shape))
+                $shape = $request->shape;
         }
         
         try{
             $jwt = $request->cookie('jwt');
             $url = Config::get('app.adserver_url') . '/advertisement/my_ads';
-            $response = Http::withToken($jwt)->get($url, ["interactive" => $interactive, "skip" => $skip, "limit" => $limit, "type" => $type]);
+            $response = Http::withToken($jwt)->get($url, ["interactive" => $interactive, "skip" => $skip, "limit" => $limit, "type" => $type, "shape" => $shape]);
             if($response->status() == 200){
                 if($request->ajax()){
-                    $view = view('advertiser.ad-cards', $response->json())->render();
+                    $data = $response->json();
+                    // if(empty($data)){
+                    //     return response()->json(["html" => "nothing"]);
+                    // }
+                    $view = view('advertiser.ad-cards', compact('data'))->render();
                     return response()->json(["html" => $view]);
                 }
                 $data = $response->json();
@@ -59,7 +66,6 @@ class AdvertiserController extends Controller
                 return redirect('/advertiser/dashboard')->with('error-message', 'Something went wrong!'); 
         }
         catch(Exception $e){
-            dd($e);
             return redirect('/advertiser/dashboard')->with('error-message', 'Something went wrong!');
         }
 

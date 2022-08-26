@@ -1,2 +1,2 @@
-
-$(img).lazyload();
+const observer = lozad();
+observer.observe();

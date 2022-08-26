@@ -86,7 +86,6 @@
     top: 50%;
     width: 16px;
     height: 16px;
-    background: url("../img/cd-icon-arrow.svg") no-repeat center center;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -160,7 +159,6 @@
     display: block;
     width: 16px;
     height: 16px;
-    background: url("../img/cd-icon-arrow.svg") no-repeat center center;
     pointer-events: none;
   }
   .cd-filter-block select {
@@ -227,7 +225,6 @@
     /* check mark style for check boxes */
     width: 16px;
     height: 16px;
-    background: url("../img/cd-icon-check.svg") no-repeat center center;
   }
   .cd-filter-block .radio-label::before,
   .cd-filter-block .radio-label::after {

@@ -56,9 +56,7 @@ jQuery(document).ready(function($){
 	});
 
 	function fixGallery() {
-		var offsetTop = $('.cd-main-content').offset().top,
-			scrollTop = $(window).scrollTop();
-		( scrollTop >= offsetTop ) ? $('.cd-main-content').addClass('is-fixed') : $('.cd-main-content').removeClass('is-fixed');
+		
 	}
 
 	/************************************
