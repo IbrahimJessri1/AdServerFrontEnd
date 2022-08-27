@@ -9,7 +9,7 @@
                     <select class="filter" name="type" id="type">
                         <option selected value="all"> All </option>
                         <option value="image">Image</option>
-                        <option value="gif">Gif</option>
+                        <option value="gif">GIF</option>
                         <option value="video">Video</option>
                     </select>
                 </div> 

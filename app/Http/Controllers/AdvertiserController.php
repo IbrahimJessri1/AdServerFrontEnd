@@ -83,7 +83,7 @@ class AdvertiserController extends Controller
         $username = "";
         if (session()->has('username'))
             $username = session()->get('username');
-        return view('advertiser.create', [
+        return view('advertiser.create-ad', [
             "username" => $username,
             "simpleheader" => true
         ]);
