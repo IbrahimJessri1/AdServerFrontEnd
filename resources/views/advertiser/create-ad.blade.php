@@ -1,7 +1,17 @@
 
 
 
+@php
+    $sel_cat = [];
+    if(old('categories') !== null){
+        $sel_cat = explode(",", old('categories'));
+    }
 
+    $sel_age = [];
+    if(old('target_age') !== null){
+        $sel_age = explode(",", old('target_age'));
+    }
+@endphp
 
 
 
@@ -18,57 +28,78 @@
         <div class="card-body">
             <h3 class="card-title mt-2  font-bold text-lg">Create New Advertisement</h3>
     
-            <form class="mt-4">
-                
+            <form id="create-ad-form" class="mt-4" method="POST" action="/advertiser/create">
+                @csrf
                 <span class="font-bold text-[#106eea]"> Advertisement Info </span>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Text</label>
                     <div class="col-sm-10">
-                        <input type="text" name = "text" class="form-control" placeholder="can be empty">
+                        <input type="text" name = "text" class="form-control" placeholder="can be empty" value="{{old('text')}}">
+                        @error('text')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Type</label>
                     <div class="col-sm-10">
                         <select name = "type" class="form-select">
-                            <option value="image">Image</option>
-                            <option value="gif">GIF</option>
-                            <option value="video">Video</option>
-                          </select>
+                            <option value="image" {{ (old("type") == 'image' ? "selected":"") }}>Image</option>
+                            <option value="gif" {{ (old("type") == 'gif' ? "selected":"") }}>GIF</option>
+                            <option value="video" {{ (old("type") == 'video' ? "selected":"") }}>Video</option>
+                        </select>
+                        @error('type')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Shape</label>
                     <div class="col-sm-10">
                         <select name = "shape" class="form-select">
-                            <option value="rectangular">Rectangular</option>
-                            <option value="horizontal">Horizontal</option>
-                            <option value="vertical">Vertical</option>
+                            <option value="rectangular" {{ (old("shape") == 'rectangular' ? "selected":"") }}>Rectangular</option>
+                            <option value="horizontal" {{ (old("shape") == 'horizontal' ? "selected":"") }}>Horizontal</option>
+                            <option value="vertical" {{ (old("shape") == 'vertical' ? "selected":"") }}>Vertical</option>
                           </select>
+                        @error('shape')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Width</label>
                     <div class="col-sm-10">
-                        <input type="number"name = "width" class="form-control" placeholder=">=5px e.g:300">
+                        <input type="number"name = "width" class="form-control" placeholder=">=5px e.g:300" value = "{{old('width')}}">
+                        @error('width')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Height</label>
                     <div class="col-sm-10">
-                        <input type="number" name = "height" class="form-control" placeholder=">=5px e.g:250">
+                        <input type="number" name = "height" class="form-control" placeholder=">=5px e.g:250" value="{{old('height')}}">
+                        @error('height')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">URL</label>
                     <div class="col-sm-10">
-                        <input type="text" name = "url" class="form-control" placeholder="e.g:https://example.jpg">
+                        <input type="text" name = "url" class="form-control" placeholder="e.g:https://example.jpg" value="{{old('url')}}">
+                        @error('url')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Redirect URL</label>
                     <div class="col-sm-10">
-                        <input type="text" name = "redirect_url" class="form-control" placeholder="empty considered non-interactive">
+                        <input type="text" name = "redirect_url" class="form-control" placeholder="empty considered non-interactive" value= "{{old('redirect_url')}}">
+                        @error('redirect_url')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -77,13 +108,19 @@
                     <div class="col-sm-10">
                         <div id="categories-select">
                         </div>
+                        @error('categories')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Optional Keywords</label>
                     <div class="col-sm-10">
-                        <input id="keywords" name="keywords" type="text" placeholder="Can Be Empty">
+                        <input id="keywords" name="keywords" type="text" placeholder="Can Be Empty" value="{{old('keywords')}}">
+                        @error('keywords')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -94,7 +131,10 @@
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Location</label>
                     <div class="col-sm-10">
-                        <input type="text" name = "location" class="form-control" placeholder="any">
+                        <input type="text" name = "location" class="form-control" placeholder="empty means any" value="{{old('location')}}">
+                        @error('location')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
@@ -102,6 +142,9 @@
                     <div class="col-sm-10">
                         <div id="age-select">
                         </div>
+                        @error('target-age')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 
@@ -109,20 +152,26 @@
                     <label class="col-sm-2 col-form-label">Target Gender</label>
                     <div class="col-sm-10">
                         <select name = "target-gender" class="form-select">
-                            <option value="both">Both</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
+                            <option value="both" {{ (old("target-gender") == 'both' ? "selected":"") }}>Both</option>
+                            <option value="male" {{ (old("target-gender") == 'male' ? "selected":"") }}>Male</option>
+                            <option value="female" {{ (old("target-gender") == 'female' ? "selected":"") }}>Female</option>
+                        </select>
+                        @error('target-gender')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Language</label>
                     <div class="col-sm-10">
                         <select name = "language" class="form-select">
-                            <option value="any">any</option>
-                            <option value="en">en</option>
-                            <option value="ar">ar</option>
+                            <option value="any" {{ (old("language") == 'any' ? "selected":"") }}>any</option>
+                            <option value="en" {{ (old("language") == 'en' ? "selected":"") }}>en</option>
+                            <option value="ar" {{ (old("language") == 'ar' ? "selected":"") }}>ar</option>
                           </select>
+                          @error('language')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -130,19 +179,37 @@
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Max CPC</label>
                     <div class="col-sm-10">
-                        <input type="range" name="max_cpc" value="1.2" class="form-range" min="0.5" max="10" step="0.01" oninput="this.nextElementSibling.value = this.value">
-                        <output> 1.2 </output>
+                        @php
+                            $max_cpc_val = 1.2;
+                            if(old('max_cpc')  != null)
+                                $max_cpc_val = old('max_cpc');
+                        @endphp
+                        <input type="range" name="max_cpc" value="{{$max_cpc_val}}" class="form-range" min="0.5" max="10" step="0.01" oninput="this.nextElementSibling.value = this.value">
+                        <output> {{$max_cpc_val}} </output>
+                        @error('max_cpc')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Raise Percentage</label>
                     <div class="col-sm-10">
-                        <input type="range" name="raise_percentage" value="0.2" class="form-range" min="0.05" max="1" step="0.01" oninput="this.nextElementSibling.value = this.value">
-                        <output> 0.2 </output>
+                        @php
+                        $raise_percentage_val = 0.2;
+                            if(old('raise_percentage') != null)
+                                $raise_percentage_val = old('raise_percentage');
+                        @endphp
+                        <input type="range" name="raise_percentage" value="{{$raise_percentage_val}}" class="form-range" min="0.05" max="1" step="0.01" oninput="this.nextElementSibling.value = this.value">
+                        <output> {{$raise_percentage_val}} </output>
+                        @error('raise_percentage')
+                            <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
-
+                <div class="row-sm-10" style="display:flex; flex-direction:row; justify-content:center;">
+                    <button type="submit" class="btn btn-primary bg-[#106eea]">Create Ad!</button>
+                </div>
 
 
             </form>
@@ -164,12 +231,14 @@
             search: true,
             searchGroup: false,
             searchByStartsWith: false,
-            placeholder: 'Select Target Age'
+            placeholder: 'Select Target Age',
+            name:'target_age',
+            required: true,
+            selectedValue: {!! json_encode($sel_age) !!}
         });
 
 
         categories_options = [
-            {label: 'ANY', value: 'any', alias: 'any'},
             {label: 'PLACES', value: 'places', alias: 'places'},
             {label: 'TECHNOLOGY', value: 'technology', alias: 'technology'},
             {label: 'HEALTHCARE', value: 'healthcare', alias: 'healthcare'},
@@ -205,9 +274,11 @@
             search: true,
             searchGroup: false,
             searchByStartsWith: false,
-            placeholder: 'Select Categories'
+            placeholder: 'Select Categories',
+            name :'categories',
+            required : true,
+            selectedValue: {!! json_encode($sel_cat) !!}
         });
-
 
         var keywords = document.getElementById('keywords');
         var choices1 = new Choices(keywords, {
@@ -218,6 +289,13 @@
         });
 
 
+        document.getElementById('create-ad-form').addEventListener('submit', function(e) {
+            // e.preventDefault();
+            let vs = document.getElementsByClassName('vscomp-hidden-input');
+            document.getElementById('categories_input').value = vs[0].value;
+            document.getElementById('age_input').value = vs[1].value;
+            console.log('hi')
+        });
 
 
         

@@ -41,6 +41,6 @@ Route::get('/advertiser/dashboard', [AdvertiserController::class, 'dashboard'])-
 
 Route::get('/advertiser/ads', [AdvertiserController::class, 'get_my_ads'])->middleware('authcheck');
 
-Route::get('/advertiser/create', [AdvertiserController::class, 'create'])->middleware('authcheck');
+Route::get('/advertiser/create', [AdvertiserController::class, 'show_create'])->middleware('authcheck');
 
-
+Route::post('/advertiser/create', [AdvertiserController::class, 'store'])->middleware('authcheck');

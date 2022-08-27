@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Config;
 
@@ -79,7 +80,7 @@ class AdvertiserController extends Controller
         ]);
     }
 
-    public function create(){
+    public function show_create(){
         $username = "";
         if (session()->has('username'))
             $username = session()->get('username');
@@ -87,5 +88,29 @@ class AdvertiserController extends Controller
             "username" => $username,
             "simpleheader" => true
         ]);
+    }
+
+    public function store(Request $request){
+        dd($request);
+        $formFields = $request->validate([
+            'type' => ['required',Rule::in(['image', 'gif', 'video'])],
+            'shape' => ['required', Rule::in(['rectangular', 'horizontal', 'vertical'])],
+            'width' => 'required',
+            'height' => 'required',
+            'url' => 'required',
+            'target-gender' => ['required',Rule::in(['both', 'male', 'female'])],
+            'language' => ['required',Rule::in(['any', 'en', 'ar'])],
+            'raise_percentage' => 'required',
+            'max_cpc' => 'required',
+            'categories' => 'required'
+        ]);
+
+        $username = "";
+        if (session()->has('username'))
+            $username = session()->get('username');
+        
+        // $user_info = ["age" => ]
+
+
     }
 }
