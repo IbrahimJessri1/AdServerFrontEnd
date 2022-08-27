@@ -23,7 +23,7 @@
       <form class="inline ml-[2%]" method="POST" action="/logout">
         @csrf
         <button type="submit" class='hover:text-black'>
-          <i class="fa-solid fa-door-closed"></i> Logout
+          <i class="fa-solid fa-door-closed"></i> Log out
         </button>
       </form>
     @endif

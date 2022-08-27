@@ -10,7 +10,7 @@
       <div class="d-flex">
         @if(!isset($username) || $username == "")
           <a href="#about" class="btn-get-started scrollto">Register</a>
-          <a href="/login" class="mt-2 ml-2"><span class="py-2.5 px-5 mr-2 text-base font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Log In</span></a>
+          <a href="/login" class="mt-2 ml-2"><span style="height:100px" class="py-2.5 px-5 mr-2 text-base font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Log In</span></a>
         @else
         <a href="/advertiser/dashboard" class="btn-get-started scrollto">Dashboard</a>
         @endif
