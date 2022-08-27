@@ -50,13 +50,13 @@
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Width</label>
                     <div class="col-sm-10">
-                        <input type="number"name = "width" class="form-control" placeholder=">=5px">
+                        <input type="number"name = "width" class="form-control" placeholder=">=5px e.g:300">
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Height</label>
                     <div class="col-sm-10">
-                        <input type="number" name = "height" class="form-control" placeholder=">=5px">
+                        <input type="number" name = "height" class="form-control" placeholder=">=5px e.g:250">
                     </div>
                 </div>
                 <div class="row mb-3 mt-4 ml-4">
@@ -211,7 +211,7 @@
 
         var keywords = document.getElementById('keywords');
         var choices1 = new Choices(keywords, {
-            delimiter: '-',
+            delimiter: '#',
             editItems: false,
             maxItems: 5,
             removeButton: true
