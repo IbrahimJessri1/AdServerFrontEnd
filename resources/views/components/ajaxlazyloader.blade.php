@@ -1,12 +1,9 @@
 
 
-
-
 <script defer>
     document.getElementById('type').onchange = selChange;
     document.getElementById('shape').onchange = selChange;
     document.getElementById('interactive').onchange = selChange;
-
     var no_more = false;
     function loadMoreData(skip, limit, interactive, type, shape){
         $.ajax({
@@ -41,8 +38,6 @@
             loadMoreData(skip, limit, interactive, type, shape); 
         }
     });
-
-
     function selChange(){
         type = document.getElementById("type").value;
         shape = document.getElementById("shape").value;

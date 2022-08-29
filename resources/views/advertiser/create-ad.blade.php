@@ -142,7 +142,7 @@
                     <div class="col-sm-10">
                         <div id="age-select">
                         </div>
-                        @error('target-age')
+                        @error('target_age')
                             <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
                         @enderror
                     </div>
@@ -151,12 +151,12 @@
                 <div class="row mb-3 mt-4 ml-4">
                     <label class="col-sm-2 col-form-label">Target Gender</label>
                     <div class="col-sm-10">
-                        <select name = "target-gender" class="form-select">
-                            <option value="both" {{ (old("target-gender") == 'both' ? "selected":"") }}>Both</option>
-                            <option value="male" {{ (old("target-gender") == 'male' ? "selected":"") }}>Male</option>
-                            <option value="female" {{ (old("target-gender") == 'female' ? "selected":"") }}>Female</option>
+                        <select name = "target_gender" class="form-select">
+                            <option value="both" {{ (old("target_gender") == 'both' ? "selected":"") }}>Both</option>
+                            <option value="male" {{ (old("target_gender") == 'male' ? "selected":"") }}>Male</option>
+                            <option value="female" {{ (old("target_gender") == 'female' ? "selected":"") }}>Female</option>
                         </select>
-                        @error('target-gender')
+                        @error('target_gender')
                             <p class="text-red-500 text-xs mt-1 ml-2">{{$message}}</p>
                         @enderror
                     </div>

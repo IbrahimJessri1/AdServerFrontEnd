@@ -44,3 +44,17 @@ Route::get('/advertiser/ads', [AdvertiserController::class, 'get_my_ads'])->midd
 Route::get('/advertiser/create', [AdvertiserController::class, 'show_create'])->middleware('authcheck');
 
 Route::post('/advertiser/create', [AdvertiserController::class, 'store'])->middleware('authcheck');
+
+
+
+Route::get('/advertiser/served', [AdvertiserController::class, 'show_serve'])->middleware('authcheck');
+
+Route::get('/advertiser/enable', [AdvertiserController::class, 'ad_enable'])->middleware('authcheck');
+
+Route::get('/advertiser/ad/{id}', [AdvertiserController::class, 'show_ad'])->middleware('authcheck');
+
+Route::POST('/advertiser/update/{id}', [AdvertiserController::class, 'update'])->middleware('authcheck');
+
+Route::get('/advertiser/pay_served_ad/{id}', [AdvertiserController::class, 'pay_served_ad'])->middleware('authcheck');
+
+Route::get('/advertiser/pay_tot_charges/{id}', [AdvertiserController::class, 'pay_tot_charges'])->middleware('authcheck');

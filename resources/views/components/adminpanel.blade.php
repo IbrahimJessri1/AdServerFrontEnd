@@ -19,6 +19,14 @@
         <span class="menu-title">Create Ad</span>
       </a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/advertiser/served">
+        <i class="fas fa-usd menu-icon"></i>
+        <span class="menu-title">Served Ads</span>
+      </a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link">
         <i class="menu-icon fa-solid fa-door-closed"></i>
