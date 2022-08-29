@@ -34,7 +34,11 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::get('/register', [UserController::class, 'register']);
 
-Route::post('/request', [UserController::class, 'create']);
+Route::post('/register', [UserController::class, 'create']);
+
+Route::get('/manage_account', [UserController::class, 'show_manage_account']);
+
+Route::post('/manage_account', [UserController::class, 'update_account']);
 
 Route::post('/user/authenticate', [UserController::class, 'authenticate']);
 

@@ -64,7 +64,7 @@
 
 <body>
   @isset($username)
-  <x-topbar :username="$username"/>
+    <x-topbar :username="$username"/>
   @else
   <x-topbar />
   @endisset

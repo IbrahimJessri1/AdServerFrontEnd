@@ -6,7 +6,7 @@ $(document).ready(function() {
       panelTwo = $('.form-panel.two')[0].scrollHeight;
   
     $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-      e.preventDefault();
+      // e.preventDefault();
   
       $('.form-toggle').addClass('visible');
       $('.form-panel.one').addClass('hidden');
@@ -17,7 +17,7 @@ $(document).ready(function() {
     });
   
     $('.form-toggle').on('click', function(e) {
-      e.preventDefault();
+      // e.preventDefault();
       $(this).removeClass('visible');
       $('.form-panel.one').removeClass('hidden');
       $('.form-panel.two').removeClass('active');
