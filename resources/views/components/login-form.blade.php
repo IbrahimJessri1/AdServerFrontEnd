@@ -38,7 +38,7 @@
       <h1>Register Account</h1>
     </div>
     <div class="form-content">
-      <form>
+      <form method="POST" action="/register">
         @csrf
         <div class="form-group">
           <label for="username">Username</label>
@@ -56,11 +56,10 @@
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label">Membership</label>
             <div class="col-sm-10 ml-9">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+              <select class="form-select" name="membership">
+                <option value="normal">Normal</option>
+                <option value="premium">Premium</option>
+                <option value="vip">VIP</option>
               </select>
             </div>
           </div>
@@ -72,3 +71,5 @@
     </div>
   </div>
 </div>
+
+

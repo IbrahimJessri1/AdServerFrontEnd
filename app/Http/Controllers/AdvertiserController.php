@@ -10,14 +10,30 @@ use Illuminate\Support\Facades\Config;
 
 class AdvertiserController extends Controller
 {
-    public function dashboard(){
+    public function dashboard(Request $request){
         $username = "";
         if (session()->has('username'))
             $username = session()->get('username');
-        return view('advertiser.dashboard', [
-            "username" => $username,
-            "simpleheader" => true
-        ]);
+
+        try{
+            $jwt = $request->cookie('jwt');
+            $url = Config::get('app.adserver_url') . '/advertisement/get_stats';
+            $response = Http::withToken($jwt)->get($url);
+            if($response->successful()){
+                return view('advertiser.dashboard', [
+                    "username" => $username,
+                    "simpleheader" => true,
+                    "data" => $response->json()
+                ]);
+            }
+            else if($response->status() == 401)
+                return redirect('/login')->with('info-message', 'You need to be logged in!'); 
+            else
+                return back()->with('error-message', 'Something went wrong!'); 
+        }
+        catch(Exception $e){
+            return back()->with('error-message', 'Something went wrong!');
+        }
     }
 
 

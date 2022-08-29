@@ -6,8 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>AdServer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -28,6 +27,7 @@
   <link rel="stylesheet" href="/vendor/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="/vendor/ti-icons/css/themify-icons.css">
   <link rel="icon" href="/img/advertising-64.png">
+  
   {{-- <link rel="stylesheet" type="text/css" href="/js/select.dataTables.min.css"> --}}
   <!-- End plugin css for this page -->
   <!-- inject:css -->
@@ -86,7 +86,7 @@
               <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
               <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
               @if(!isset($username) || $username == "")
-                <li> <a class="getstarted scrollto" href="/login"> Get Started</a></li>
+                <li> <a class="getstarted scrollto" href="/register"> Get Started</a></li>
                 @else
                 <li> <a class="getstarted scrollto" href="/advertiser/dashboard"> Dashboard</a></li>
               @endif
@@ -150,6 +150,9 @@
   <script src="/js/filter.js"></script> 
   
   <script src="/vendor/js/vendor.bundle.base.js"></script>
+
+  <script src="/js/chart.min.js"></script>
+
 <script src="/js/login-form.js"></script>
 <script src="/js/dashboard.js"></script>
 <script src="/js/template.js"></script>

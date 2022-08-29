@@ -13,6 +13,9 @@ class UserController extends Controller
     public function login(){
         return view("user.login", ["footer" => false, "simpleheader" => true]);
     }
+    public function register(){
+        return view("user.login", ["footer" => false, "simpleheader" => true]);
+    }
 
     // Authenticate User
     public function authenticate(Request $request) {
@@ -39,6 +42,10 @@ class UserController extends Controller
             return back()->with('error-message', "something went wrong.. try again later");
         }
 
+    }
+
+    public function create(Request $request){
+        dd($request);
     }
 
     public function logout(Request $request){

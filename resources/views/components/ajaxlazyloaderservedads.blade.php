@@ -9,6 +9,7 @@
             url: 'http://localhost:9000/advertiser/served',
             data:{ "skip" : skip ,"limit" : limit},
             type: 'get',
+            
             beforeSend :function(){
                 if(!no_more)
                     $(".ajax-load").show();

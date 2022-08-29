@@ -32,6 +32,9 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
+Route::get('/register', [UserController::class, 'register']);
+
+Route::post('/request', [UserController::class, 'create']);
 
 Route::post('/user/authenticate', [UserController::class, 'authenticate']);
 

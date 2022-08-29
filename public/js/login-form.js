@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    
+    if( $('.form-panel.two')[0] == undefined)
+      return
     var panelOne = $('.form-panel.two').height(),
       panelTwo = $('.form-panel.two')[0].scrollHeight;
   
@@ -22,4 +25,7 @@ $(document).ready(function() {
         'height': panelOne
       }, 200);
     });
+    if(window.location.href.trim() == 'http://localhost:9000/register'){
+      $('.form-panel.two').not('.form-panel.two.active').trigger( "click" );
+    }
   });
