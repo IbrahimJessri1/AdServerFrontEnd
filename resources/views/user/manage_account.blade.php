@@ -1,9 +1,9 @@
 
 <x-layout :username="$username" :footer="$footer" :simpleheader="$simpleheader">
     <div class="form">
-        <div class="form-panel one">
+        <div class="form-panel one p-11">
             <div class="form-header">
-            <h1>Manage Account</h1>
+            <h1><a class="absolute -ml-7 -mt-10" href="{{ url()->previous() }}"><i class="fas fa-arrow-left text-black"> </i></a>Manage Account</h1>
             </div>
             <div class="form-content">
             <form  method="POST" action="/manage_account">
