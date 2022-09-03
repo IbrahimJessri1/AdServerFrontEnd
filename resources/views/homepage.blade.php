@@ -2,7 +2,6 @@
 <x-layout :username="$username">
     
 
-  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Welcome to <span>Ad</span>Server</h1>
@@ -19,7 +18,6 @@
   </section>
 
   <main id="main">
-    <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container" data-aos="fade-up">
 
@@ -59,9 +57,8 @@
         </div>
 
       </div>
-    </section><!-- End Featured Services Section -->
+    </section>
 
-    <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -103,11 +100,10 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
 
 
 
-    <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container " data-aos="fade-up">
 
@@ -169,9 +165,7 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= Contact Section ======= -->
+    </section>
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -210,7 +204,7 @@
 
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
   </main>
 

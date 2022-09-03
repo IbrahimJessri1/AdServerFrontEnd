@@ -18,17 +18,7 @@ use App\Http\Controllers\UserController;
 
 
 
-// Common Resource Routes:
-// index - Show all listings
-// show - Show single listing
-// create - Show form to create new listing
-// store - Store new listing
-// edit - Show form to edit listing
-// update - Update listing
-// destroy - Delete listing  
-
 Route::get('/', [HomeController::class, 'index']);
-
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
@@ -51,8 +41,6 @@ Route::get('/advertiser/ads', [AdvertiserController::class, 'get_my_ads'])->midd
 Route::get('/advertiser/create', [AdvertiserController::class, 'show_create'])->middleware('authcheck');
 
 Route::post('/advertiser/create', [AdvertiserController::class, 'store'])->middleware('authcheck');
-
-
 
 Route::get('/advertiser/served', [AdvertiserController::class, 'show_serve'])->middleware('authcheck');
 

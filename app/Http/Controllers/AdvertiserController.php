@@ -69,9 +69,6 @@ class AdvertiserController extends Controller
             if($response->status() == 200){
                 if($request->ajax()){
                     $data = $response->json();
-                    // if(empty($data)){
-                    //     return response()->json(["html" => "nothing"]);
-                    // }
                     $view = view('advertiser.ad-cards', compact('data'))->render();
                     return response()->json(["html" => $view]);
                 }
@@ -108,7 +105,6 @@ class AdvertiserController extends Controller
     }
 
     public function store(Request $request){
-        // dd($request);
         $formFields = $request->validate([
             'type' => ['required',Rule::in(['image', 'gif', 'video'])],
             'shape' => ['required', Rule::in(['rectangular', 'horizontal', 'vertical'])],
@@ -135,7 +131,6 @@ class AdvertiserController extends Controller
             $location = $request->location;
         
         $user_info = ["age" => $age, "location" => $location, "gender" => $request->target_gender, "language" => $request->language];
-        // dd(json_encode($user_info));
         $max_cpc = floatval($request->max_cpc);
         $raise_percentage = floatval($request->raise_percentage);
         $text = "";
@@ -170,7 +165,6 @@ class AdvertiserController extends Controller
         if($redirect_url != "")
             $data["redirect_url"] = $redirect_url;
         
-        // dd($data);
         try{
             $jwt = $request->cookie('jwt');
             $ad_url = '/advertisement/create_ad';
@@ -223,9 +217,7 @@ class AdvertiserController extends Controller
 
 
 
-    public function update(Request $request){
-        // dd($request->id);
-        // dd($request);
+    public function update(Request $request){       
         $formFields = $request->validate([
             'shape' => ['required', Rule::in(['rectangular', 'horizontal', 'vertical'])],
             'width' => 'required',
@@ -250,7 +242,6 @@ class AdvertiserController extends Controller
             $location = $request->location;
         
         $user_info = ["age" => $age, "location" => $location, "gender" => $request->target_gender, "language" => $request->language];
-        // dd(json_encode($user_info));
         $max_cpc = floatval($request->max_cpc);
         $raise_percentage = floatval($request->raise_percentage);
         $text = "";
@@ -278,7 +269,6 @@ class AdvertiserController extends Controller
             "height" => $height,
             "shape" => $shape
         ];
-        // dd($data);
         try{
             $jwt = $request->cookie('jwt');
             $create_url = Config::get('app.adserver_url') . '/advertisement/';

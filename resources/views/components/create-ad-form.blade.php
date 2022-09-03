@@ -2,7 +2,6 @@
     <div class="card-body">
       <h5 class="card-title">General Form Elements</h5>
 
-      <!-- General Form Elements -->
       <form>
         <div class="row mb-3">
           <label for="inputText" class="col-sm-2 col-form-label">Text</label>
@@ -141,7 +140,7 @@
           </div>
         </div>
 
-      </form><!-- End General Form Elements -->
+      </form>
 
     </div>
   </div>

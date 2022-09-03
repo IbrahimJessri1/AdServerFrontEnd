@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Vendor CSS Files -->
     <link href="/vendor/aos/aos.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,9 +27,6 @@
   <link rel="stylesheet" href="/vendor/ti-icons/css/themify-icons.css">
   <link rel="icon" href="/img/advertising-64.png">
   
-  {{-- <link rel="stylesheet" type="text/css" href="/js/select.dataTables.min.css"> --}}
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   
   
   
@@ -72,8 +68,6 @@
     <div class="container d-flex align-items-center justify-content-between">
       <div class="logo">
         <h1><a href="/"><x-header_title /></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
         @if(!isset($simpleheader) || $simpleheader == false)
         <nav id="navbar" class="navbar">
@@ -89,13 +83,12 @@
               @endif
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav><!-- .navbar -->
+          </nav>
           @endif
       </div>
-    </header><!-- End Header -->
+    </header>
    
   {{$slot}}
-  <!-- ======= Footer ======= -->
   @if(!isset($footer) || $footer == true)
   <footer id="footer">
     <div class="container">
@@ -124,7 +117,6 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <x-flash-message />
-  <!-- Vendor JS Files -->
   <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="/vendor/aos/aos.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -134,7 +126,6 @@
   <script src="/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="/vendor/php-email-form/validate.js"></script>
   
-  <!-- Template Main JS File -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" integrity="sha512-jNDtFf7qgU0eH/+Z42FG4fw3w7DM/9zbgNPe3wfJlCylVDTT3IgKW5r92Vy9IHa6U50vyMz5gRByIu4YIXFtaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 

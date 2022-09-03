@@ -11,7 +11,6 @@
         if ($i != count($ad['keywords']) - 1)
             $keywords = $keywords . '#';
     }
-    // dd($ad);
 @endphp
 
 
@@ -23,7 +22,6 @@
 
 
 <x-advertiser-layout :username="$username" :simpleheader="$simpleheader">
-{{-- <x-create-ad-form /> --}}
 
 <div class="card">
     <div class="card-body">
@@ -298,7 +296,6 @@
 </div>
 <script type="text/javascript" defer>
     age_options = [
-        // { label: 'All Ages', value: 'all ages', alias: 'all ages'},
         { label: 'Kids', value: 'kids',  alias: 'kids'},
         { label: 'Youths', value: 'youths',  alias: 'youths'},
         { label: 'Adults', value: 'adults',  alias: 'adults'},
@@ -371,7 +368,7 @@
 
 
     document.getElementById('update-ad-form').addEventListener('submit', function(e) {
-        // e.preventDefault();
+       
         let vs = document.getElementsByClassName('vscomp-hidden-input');
         document.getElementById('categories_input').value = vs[0].value;
         document.getElementById('age_input').value = vs[1].value;

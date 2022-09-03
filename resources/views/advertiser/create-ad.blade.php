@@ -22,8 +22,6 @@
 
 
 <x-advertiser-layout :username="$username" :simpleheader="$simpleheader">
-    {{-- <x-create-ad-form /> --}}
-
     <div class="card">
         <div class="card-body">
             <h3 class="card-title mt-2  font-bold text-lg">Create New Advertisement</h3>
@@ -217,7 +215,6 @@
     </div>
     <script type="text/javascript" defer>
         age_options = [
-            // { label: 'All Ages', value: 'all ages', alias: 'all ages'},
             { label: 'Kids', value: 'kids',  alias: 'kids'},
             { label: 'Youths', value: 'youths',  alias: 'youths'},
             { label: 'Adults', value: 'adults',  alias: 'adults'},

@@ -17,7 +17,6 @@ class UserController extends Controller
         return view("user.login", ["footer" => false, "simpleheader" => true]);
     }
 
-    // Authenticate User
     public function authenticate(Request $request) {
         $formFields = $request->validate([
             'username' => ['required', 'min:4'],
@@ -28,7 +27,6 @@ class UserController extends Controller
         try{
             $response = Http::asForm()->post($url, $formFields);
             if($response->successful()){
-                // Config::set('app.username', $formFields["username"]);
                 $request->session()->put('username', $formFields["username"]);
                 $cookie_exp = time() + 3600 * 5;
                 $jwt = $response->json()["access_token"];
